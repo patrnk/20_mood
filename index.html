@@ -32,24 +32,32 @@
         </div>
       </div>
     </div>
-    <button class="refresh-button"><i class="fa fa-refresh" aria-hidden="true" style="margin-right: 10px"></i>Another one</button>
+    <button class="refresh-button" id="js-quote-refresh"><i class="fa fa-refresh" aria-hidden="true" style="margin-right: 10px"></i>Another one</button>
     <script>
       Array.prototype.randomElement = function() {
-            return this[Math.floor(Math.random() * this.length)]
+            return this[Math.floor(Math.random() * this.length)];
       }
       function getFormatterSignature(quote_signature) {
         if (typeof quote_signature === "undefined") {
           return "";
         }
-        return "— " + quote_signature
+        return "— " + quote_signature;
       }
       var json_quotes = document.getElementById("quotes_json");
+      var refresh_button = document.getElementById("js-quote-refresh");
       var quotes = JSON.parse(json_quotes.textContent);
-      var random_quote = quotes.randomElement();
-      var formatted_phrase = "“" + random_quote["phrase"] + "”"
-      var formatted_signature = getFormatterSignature(random_quote["signature"])
-      document.getElementById("js-quote-phrase").textContent = formatted_phrase
-      document.getElementById("js-quote-signature").textContent = formatted_signature
+      var random_quote;
+      var formatted_phrase;
+      var formatted_signature;
+      var setFormattedQuote = function() {
+        random_quote = quotes.randomElement();
+        formatted_phrase = "“" + random_quote["phrase"] + "”";
+        formatted_signature = getFormatterSignature(random_quote["signature"]);
+        document.getElementById("js-quote-phrase").textContent = formatted_phrase;
+        document.getElementById("js-quote-signature").textContent = formatted_signature;
+      };
+      refresh_button.onclick = setFormattedQuote;
+      setFormattedQuote();
     </script>
   </body>
 </html>
