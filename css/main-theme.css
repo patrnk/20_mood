@@ -37,3 +37,17 @@ html, body {
     font: 32px Arial, Helvetica, sans-serif;
     color: white;
 }
+
+.refresh-button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+
+    height: 80px;
+    width: 300px;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    font: 32px Arial, Helvetica, sans-serif;
+    color: white;
+    border: none;
+}
