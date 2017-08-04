@@ -6,7 +6,7 @@
       [
         {
           "phrase": "Кукурузные хлопья - теперь без асбеста!",
-          "signature": "©Неизвестный маркетолог"
+          "signature": "Неизвестный маркетолог"
         },
         {
           "phrase": "Собираюсь жить вечно, пока всё идёт нормально"
@@ -21,5 +21,28 @@
     </script>
   </head>
   <body>
+    <div>
+      <span id="js-quote-phrase"></span>
+      <br>
+      <span id="js-quote-signature"></span>
+    </div>
+    <script>
+      Array.prototype.randomElement = function() {
+            return this[Math.floor(Math.random() * this.length)]
+      }
+      function getFormatterSignature(quote_signature) {
+        if (typeof quote_signature === "undefined") {
+          return "";
+        }
+        return "— " + quote_signature
+      }
+      var json_quotes = document.getElementById("quotes_json");
+      var quotes = JSON.parse(json_quotes.textContent);
+      var random_quote = quotes.randomElement();
+      var formatted_phrase = "“" + random_quote["phrase"] + "”"
+      var formatted_signature = getFormatterSignature(random_quote["signature"])
+      document.getElementById("js-quote-phrase").textContent = formatted_phrase
+      document.getElementById("js-quote-signature").textContent = formatted_signature
+    </script>
   </body>
 </html>
