@@ -1,6 +1,6 @@
-# Site for the Mood
+# Feel-Good Website
 
-[TODO. There will be project description]
+One-page website that tries to cheer up its visitors by displaying corny programming jokes. There's a [live version](https://patrnk.github.io/20_mood/).
 
 # Project Goals
 
