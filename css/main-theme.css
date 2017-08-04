@@ -1,3 +1,44 @@
-body {
-    background: #ffffff url("../img/background.jpg") no-repeat right top;
+html {
+    background: url(../img/background.png) no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.quote-background-table {
+    position: absolute;
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.quote-background-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.quote-background {
+    display: inline-block;
+    width: 100%;
+    height: 35%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    vertical-align: middle;
+}
+
+.centerer {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.centered {
+    display: inline-block;
+    vertical-align: middle;
 }
